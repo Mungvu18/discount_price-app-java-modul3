@@ -11,7 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  <form action="/translate" method="post">
+  <form action="/discount" method="get">
     <input type="text" name="description" placeholder="product description">
     <input type="text" name="price" placeholder="price">
     <input type="text" name="discount" placeholder="discount">

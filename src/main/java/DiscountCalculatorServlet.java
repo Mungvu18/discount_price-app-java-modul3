@@ -1,3 +1,4 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -6,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "DiscountCalculatorServlet", urlPatterns = "/translate")
+@WebServlet(name = "DiscountCalculatorServlet", urlPatterns = "/discount")
 public class DiscountCalculatorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     float price = Float.parseFloat(request.getParameter("price"));
@@ -21,6 +22,7 @@ public class DiscountCalculatorServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        RequestDispatcher dispatcher = request.getRequestDispatcher("discount.jsp");
+        dispatcher.forward(request,response);
     }
 }
